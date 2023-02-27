@@ -1,4 +1,9 @@
-Programa que grafica estaciónes en un mapa utilizando folium. 
+Programa en Python que grafica estaciónes en un mapa utilizando folium. 
+
+Necesario tener: 
+folium 
+pandas 
+branca 
 
 Los valores de entrada son los csv de las estaciónes, estos se leen en un data frame. Para correrlo se deben de cambiar las rutas de los archivos.
 
