@@ -297,4 +297,5 @@ my_map.keep_in_front(R)
 #Display the map in browser
 #my_map.show_in_browser()
 
-my_map.save("/var/www/html/pages/my_map2.html")
+my_map.save("mapa_estaciones.html")
+
