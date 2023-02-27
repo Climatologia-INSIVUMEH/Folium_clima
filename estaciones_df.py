@@ -21,8 +21,6 @@ my_map = folium.Map(location = boulder_coords, zoom_start = 8, control_scale=Tru
 marker_cluster = MarkerCluster(name="Estaciones Climáticas").add_to(my_map)
 marker_cluster2 = MarkerCluster(name="Estaciones Sinópticas", show=False).add_to(my_map)
 
-
-
 #### Enlaces ####
 regiones_clima='https://raw.githubusercontent.com/PeterArgueta/clima/main/rc.geojson'
 departamentos='https://raw.githubusercontent.com/PeterArgueta/clima/main/deptos_gt.geojson'
@@ -69,13 +67,15 @@ folium.GeoJson(
 ######################################
 #### Data frame ####
 
-df_sino=(pd.read_csv('/home/rainy/Documents/Rutinas/mapas/sinopticas.csv').dropna(subset=["Latitude","Longitude"]))
+
+
+df_sino=(pd.read_csv('/home/rainy/Documents/Rutinas/mapas/Mapa_estaciones/data/sinopticas.csv').dropna(subset=["Latitude","Longitude"]))
 df_sino['Tipo']='sino' #se crea una columna para que a partir de este dato se elija el icono que se mostrará en la pantalla.
 
-df_auto=(pd.read_csv('/home/rainy/Documents/Rutinas/mapas/automaticas.csv').dropna(subset=["Latitude","Longitude"]))
+df_auto=(pd.read_csv('/home/rainy/Documents/Rutinas/mapas/Mapa_estaciones/data/automaticas.csv').dropna(subset=["Latitude","Longitude"]))
 df_auto['Tipo']='automática'
 
-df_conv=(pd.read_csv('/home/rainy/Documents/Rutinas/mapas/convencionales.csv').dropna(subset=["Latitude","Longitude"]))
+df_conv=(pd.read_csv('/home/rainy/Documents/Rutinas/mapas/Mapa_estaciones/data/convencionales.csv').dropna(subset=["Latitude","Longitude"]))
 df_conv['Tipo']='convencional'
 
 #Se concatenan los 3 data frame para trabajar sólo con uno. 
@@ -258,12 +258,8 @@ def icono_chilero(row):
     return html
 
 
-
-
-
 #'<img src="https://github.com/PeterArgueta/clima/raw/main/"""+Tipo +""".png" style="width:35px;height:35px;">'
 #'<img src="https://www.svgrepo.com/show/286488/pin.svg" style="width:30px;height:30px;">'
-
 
     
 #### ICON SINOPTICAS ####
@@ -279,7 +275,6 @@ for i in range(0,len(df)):
                   popup=popup, icon=folium.DivIcon(icono)).add_to(marker_cluster) 
     
 
-
 for i in range(0,len(df_sino)):
     html = html_chilera(i)
     iframe = branca.element.IFrame(html=html,width=400,height=230)
@@ -287,9 +282,7 @@ for i in range(0,len(df_sino)):
     folium.Marker([df_sino['Latitude'].iloc[i],df_sino['Longitude'].iloc[i]],
                   popup=popup, icon=folium.DivIcon(icono_sino)).add_to(marker_cluster2) 
  
-    
-#### hace otro ciclo for para el tercer data frame y agregarlo a otro marker cluster, no olvidar cambiar el nombre al segundo marker cluster ####    
-    
+        
 logo = ("https://raw.githubusercontent.com/PeterArgueta/clima/main/logo.png")
 FloatImage(logo, bottom=5, left=1, width='80px').add_to(my_map)
 
