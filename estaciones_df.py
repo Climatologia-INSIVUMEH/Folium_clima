@@ -69,13 +69,13 @@ folium.GeoJson(
 
 
 
-df_sino=(pd.read_csv('/home/rainy/Documents/Rutinas/mapas/Mapa_estaciones/data/sinopticas.csv').dropna(subset=["Latitude","Longitude"]))
+df_sino=(pd.read_csv('data/sinopticas.csv').dropna(subset=["Latitude","Longitude"]))
 df_sino['Tipo']='sino' #se crea una columna para que a partir de este dato se elija el icono que se mostrará en la pantalla.
 
-df_auto=(pd.read_csv('/home/rainy/Documents/Rutinas/mapas/Mapa_estaciones/data/automaticas.csv').dropna(subset=["Latitude","Longitude"]))
+df_auto=(pd.read_csv('data/automaticas.csv').dropna(subset=["Latitude","Longitude"]))
 df_auto['Tipo']='automática'
 
-df_conv=(pd.read_csv('/home/rainy/Documents/Rutinas/mapas/Mapa_estaciones/data/convencionales.csv').dropna(subset=["Latitude","Longitude"]))
+df_conv=(pd.read_csv('data/convencionales.csv').dropna(subset=["Latitude","Longitude"]))
 df_conv['Tipo']='convencional'
 
 #Se concatenan los 3 data frame para trabajar sólo con uno. 
