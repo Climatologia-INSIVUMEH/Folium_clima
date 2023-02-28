@@ -1,4 +1,4 @@
-<h1/> Hola <h1>
+
 
 Programa en Python que grafica estaciónes en un mapa utilizando folium. 
 
