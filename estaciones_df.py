@@ -291,15 +291,6 @@ folium.LayerControl(position="bottomright").add_to(my_map)
 my_map.keep_in_front(R)
 
 
-#folium.LayerControl()
-
-#Display the map in browser
-#my_map.show_in_browser()
-
-#AGREGAR OTRAS FUNCIONALIDADES 
- 
-#mostrar la coordenada del cursor 
-##fmtr = "function(num) {return L.Util.formatNum(num, 3) + ' º ';};" 
 MousePosition( 
     position='bottomright', 
     separator=' | ', 
