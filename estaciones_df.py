@@ -9,8 +9,7 @@ import folium
 import pandas as pd
 import branca
 from folium.plugins import FloatImage
-from folium.plugins import MarkerCluster
-
+from folium.plugins import MarkerCluster, MiniMap, MousePosition, MeasureControl, Geocoder, FloatImage
 
 #Define coordinates of where we want to center our map
 boulder_coords = [15.8, -90.5]
@@ -296,6 +295,22 @@ my_map.keep_in_front(R)
 
 #Display the map in browser
 #my_map.show_in_browser()
+
+#AGREGAR OTRAS FUNCIONALIDADES 
+ 
+#mostrar la coordenada del cursor 
+##fmtr = "function(num) {return L.Util.formatNum(num, 3) + ' º ';};" 
+MousePosition( 
+    position='bottomright', 
+    separator=' | ', 
+    prefix="Mouse:", 
+    num_digits=3, 
+    #lat_formatter=fmtr, 
+    #lng_formatter=fmtr 
+).add_to(my_map) 
+ 
+
+
 
 my_map.save("index.html")
 
