@@ -212,7 +212,7 @@ def html_chilera(row):
       </div>
 
       <div id="contact" class="tabcontent">
-      <iframe class="responsive-iframe" src="/home/rainy/Documents/Rutinas/Base_de_datos/Current_variables/COBAN.html"></iframe>
+      <iframe src="https://raw.githubusercontent.com/PeterArgueta/dataset/master/img/COBAN.png"></iframe>
       </div>
 
 
