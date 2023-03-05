@@ -89,8 +89,6 @@ df_conv['Tipo']='convencional'
 
 df=pd.concat([df_auto,df_conv])
 
-df.to_csv('nuevo.csv')
-
 ####HTML###
 
 def html_chilera(row):
