@@ -6,6 +6,7 @@ Created on Tue Feb 21 15:40:55 2023
 @author: rainy
 """
 import folium
+import random
 import pandas as pd
 import branca
 from folium.plugins import FloatImage
@@ -37,6 +38,14 @@ style_function2 = lambda x: {'fillColor': '#ffffff',
                             'weight':1,
                             "dashArray": "5, 5"}
 
+
+def random_color(feature):
+    return {'fillColor': f"#{random.randint(0, 0xFFFFFF):06x}", 'color': '#000000',
+                            'fillOpacity': 0.4,
+                            'weight':0.8}
+
+
+
 #### Highlight ####
 
 highlight_function = lambda x: {'fillColor': '#e78829', 
@@ -48,7 +57,7 @@ highlight_function = lambda x: {'fillColor': '#e78829',
 R=folium.GeoJson(
     regiones_clima, name="Regiones Climáticas",
     style_function=style_function,
-    highlight_function=highlight_function,
+    highlight_function=random_color,
     show=(True), embed=True,
     tooltip=folium.features.GeoJsonTooltip(
         fields=['NOMBRE'],  # use fields from the json file
