@@ -308,9 +308,6 @@ MousePosition(
     #lat_formatter=fmtr, 
     #lng_formatter=fmtr 
 ).add_to(my_map) 
- 
-
-
 
 my_map.save("index.html")
 
