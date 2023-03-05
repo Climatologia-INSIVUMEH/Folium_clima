@@ -75,8 +75,6 @@ folium.GeoJson(
 ######################################
 #### Data frame ####
 
-
-
 df_sino=(pd.read_csv('data/sinopticas.csv').dropna(subset=["Latitude","Longitude"]))
 df_sino['Tipo']='sino' #se crea una columna para que a partir de este dato se elija el icono que se mostrará en la pantalla.
 
