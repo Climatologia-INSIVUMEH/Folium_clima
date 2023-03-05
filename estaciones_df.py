@@ -208,11 +208,11 @@ def html_chilera(row):
 
       <div id="about" class="tabcontent">
       <h2>Variables</h2>
-      <p>Varianbles que mide la estación</p>
+      <p>Variables que mide la estación</p>
       </div>
 
       <div id="contact" class="tabcontent">
-      <iframe src="https://raw.githubusercontent.com/PeterArgueta/dataset/master/img/COBAN.png"></iframe>
+       <img src="https://raw.githubusercontent.com/PeterArgueta/dataset/master/img/""" + Estación + """.png" alt="graph" width="420" height="200"> 
       </div>
 
 
@@ -275,7 +275,7 @@ icono_sino=html='<img src="https://github.com/PeterArgueta/clima/raw/main/sino.p
 for i in range(0,len(df)):
     html = html_chilera(i)
     icono= icono_chilero(i)
-    iframe = branca.element.IFrame(html=html,width=400,height=230)
+    iframe = branca.element.IFrame(html=html,width=440,height=230)
     popup = folium.Popup(iframe,parse_html=True)
     folium.Marker([df['Latitude'].iloc[i],df['Longitude'].iloc[i]],
                   popup=popup, icon=folium.DivIcon(icono)).add_to(marker_cluster) 
@@ -283,13 +283,15 @@ for i in range(0,len(df)):
 
 for i in range(0,len(df_sino)):
     html = html_chilera(i)
-    iframe = branca.element.IFrame(html=html,width=400,height=230)
+    iframe = branca.element.IFrame(html=html,width=440,height=230)
     popup = folium.Popup(iframe,parse_html=True)
     folium.Marker([df_sino['Latitude'].iloc[i],df_sino['Longitude'].iloc[i]],
                   popup=popup, icon=folium.DivIcon(icono_sino)).add_to(marker_cluster2) 
  
         
 logo = ("https://raw.githubusercontent.com/PeterArgueta/clima/main/logo.png")
+#logo = ("https://raw.githubusercontent.com/PeterArgueta/dataset/master/img/COBAN.png")
+
 FloatImage(logo, bottom=5, left=1, width='80px').add_to(my_map)
 
 
