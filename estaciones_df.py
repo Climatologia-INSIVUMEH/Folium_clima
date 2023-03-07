@@ -207,6 +207,7 @@ def html_chilera(row):
 
       <div id="about" class="tabcontent">
       <h2>Variables</h2>
+       <a href="http://172.20.0.56/pages/csvpage/"""+Estación+""".html" target="_blank" class="button"> Datos mensuales</a>
       <p>Variables que mide la estación</p>
       </div>
 
@@ -215,10 +216,7 @@ def html_chilera(row):
        <img src="https://raw.githubusercontent.com/PeterArgueta/dataset/master/img/""" + Estación + """.png" alt="graph" width="420" height="200"> 
        </a>
       </div>
-
-
       <script>
-
 
       function openTab(evt, tabName) {
       // Obtener elementos con la clase "tabcontent" y ocultarlos
@@ -237,9 +235,6 @@ def html_chilera(row):
       document.getElementById(tabName).classList.add("active");
       evt.currentTarget.classList.add("active");
       }
-
-
-
 
       </script>
       </body>
