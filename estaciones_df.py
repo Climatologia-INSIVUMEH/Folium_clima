@@ -211,7 +211,9 @@ def html_chilera(row):
       </div>
 
       <div id="contact" class="tabcontent">
+       <a href="http://172.20.0.56/pages/stationsmap/""" + Estación + """.html"   target="_blank">
        <img src="https://raw.githubusercontent.com/PeterArgueta/dataset/master/img/""" + Estación + """.png" alt="graph" width="420" height="200"> 
+       </a>
       </div>
 
 
