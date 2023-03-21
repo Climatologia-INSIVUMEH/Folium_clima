@@ -11,3 +11,4 @@ Los valores de entrada son los csv de las estaciónes, estos se leen en un data 
 
 Los csv contienen datos de latitud, longitud, descripción de la estación (Estación, Código, Departamento, Municipio, Latitude, Longitude, Altitude). 
 
+Para visualizar el mapa puede ingresar en el siguiente enlace [!](https://climatologia-insivumeh.github.io/Folium_clima/)
