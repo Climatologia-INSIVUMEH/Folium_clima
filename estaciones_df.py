@@ -98,8 +98,8 @@ def html_chilera(row):
     Departamento = df['Departamento'].iloc[i]                           
     Municipio = df['Municipio'].iloc[i]
     ID = df['Código'].iloc[i]                 
-    Latitude=str(round(df['Latitude'].iloc[i],2))   
-    Longitude=str(round(df['Longitude'].iloc[i],2))
+    Latitude=str(round(df['Latitude'].iloc[i],6))   
+    Longitude=str(round(df['Longitude'].iloc[i],6))
     
     html = """<!DOCTYPE html>
 
