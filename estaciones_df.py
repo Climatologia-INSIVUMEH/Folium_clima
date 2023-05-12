@@ -65,7 +65,7 @@ R=folium.GeoJson(
         style=("background-color: white; color: #000000; font-family: arial; font-size: 12px; padding: 10px;") 
     ), 
 ).add_to(my_map)
-
+#
 folium.GeoJson(
     departamentos, name="Departamentos",
     style_function=style_function2,
