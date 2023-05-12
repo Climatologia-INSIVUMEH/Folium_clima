@@ -65,7 +65,7 @@ R=folium.GeoJson(
         style=("background-color: white; color: #000000; font-family: arial; font-size: 12px; padding: 10px;") 
     ), 
 ).add_to(my_map)
-#
+
 folium.GeoJson(
     departamentos, name="Departamentos",
     style_function=style_function2,
@@ -193,7 +193,8 @@ def html_chilera(row):
       <div class="tab">
       <button class="tablinks active" onclick="openTab(event, 'home')">Estación</button>
       <button class="tablinks" onclick="openTab(event, 'about')">Variables</button>
-      <button class="tablinks" onclick="openTab(event, 'contact')">Gráfica</button>
+      <button class="tablinks" onclick="openTab(event, 'contact')">Precipitación</button>
+      <button class="tablinks" onclick="openTab(event, 'contact2')">Humedad Relativa</button>
       </div>
 
       <div id="home" class="tabcontent active">
@@ -216,6 +217,13 @@ def html_chilera(row):
        <img src="https://raw.githubusercontent.com/PeterArgueta/dataset/master/img/""" + Estación + """.png" alt="graph" width="420" height="200"> 
        </a>
       </div>
+
+      <div id="contact2" class="tabcontent">
+       <a href="http://172.20.0.56/pages/timeseries/output2/""" + Estación + """.html"   target="_blank">
+       <img src="https://raw.githubusercontent.com/PeterArgueta/dataset/master/img/""" + Estación + """.png" alt="graph" width="420" height="200"> 
+       </a>
+      </div>
+
       <script>
 
       function openTab(evt, tabName) {
