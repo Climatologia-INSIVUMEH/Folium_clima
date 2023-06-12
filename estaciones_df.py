@@ -105,6 +105,7 @@ def html_chilera(row):
 
       <html>
       <head>
+      <meta charset="UTF-8">
       <style>
 
       /* Estilo de botones de pestañas */
@@ -181,8 +182,6 @@ def html_chilera(row):
 
 
       </style>
-
-
       <title>iframe</title>
       <link rel="stylesheet" href=/home/rainy/Documents/Rutinas/mapas/iframe/style.css" />
       </head>
@@ -191,35 +190,27 @@ def html_chilera(row):
 
       <body>
       <div class="tab">
-      <button class="tablinks active" onclick="openTab(event, 'home')">Estación</button>
-      <button class="tablinks" onclick="openTab(event, 'about')">Variables</button>
+      <button class="tablinks active" onclick="openTab(event, 'estacion')">Estación</button>
+      <button class="tablinks" onclick="openTab(event, 'variables')">Variables</button>
       <button class="tablinks" onclick="openTab(event, 'contact')">Precipitación</button>
-      <button class="tablinks" onclick="openTab(event, 'contact2')">Humedad Relativa</button>
       </div>
 
-      <div id="home" class="tabcontent active">
+      <div id="estacion" class="tabcontent active">
 
       <h1>""" + Estación + """</h1>
-      <p><strong>ID: </strong><a href="http://172.20.0.56/""" + ID + """" target="_blank">""" + ID + """</a></p>
+      <p><strong>ID: </strong><a href="http://172.20.0.56/pages/dashboard/output/"""+Estación+""".html" target="_blank">""" + ID + """</a></p>
       <p><strong>Ubicación: </strong><span>Lat: """ + Latitude + """, Lon: """ + Longitude + """</span></p>
       <p><strong>"""+Municipio+""", """+Departamento+"""</span></p>
 
       </div>
 
-      <div id="about" class="tabcontent">
-      <h2>Variables</h2>
-      <a href="http://172.20.0.56/pages/dashboard/"""+Estación+""".html" target="_blank" class="button"> Datos actuales</a>
+      <div id="variables" class="tabcontent">
+       <iframe src="http://172.20.0.56/pages/dashboard/output_current/"""+Estación+""".html" frameborder="0" width="100%" height="400px"></iframe>
       </div>
 
       <div id="contact" class="tabcontent">
        <a href="http://172.20.0.56/pages/stationsmap/""" + Estación + """.html"   target="_blank">
-       <img src="https://raw.githubusercontent.com/PeterArgueta/dataset/master/img/""" + Estación + """.png" alt="graph" width="420" height="200"> 
-       </a>
-      </div>
-
-      <div id="contact2" class="tabcontent">
-       <a href="http://172.20.0.56/pages/timeseries/output2/""" + Estación + """.html"   target="_blank">
-       <img src="https://raw.githubusercontent.com/PeterArgueta/dataset/master/img/""" + Estación + """.png" alt="graph" width="420" height="200"> 
+       <img src="https://raw.githubusercontent.com/Climatologia-INSIVUMEH/graph_generator_monthly/main/output/img_output/""" + Estación + """.png" alt="graph" width="430" height="250"> 
        </a>
       </div>
 
