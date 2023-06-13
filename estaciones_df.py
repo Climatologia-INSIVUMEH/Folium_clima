@@ -198,18 +198,18 @@ def html_chilera(row):
       <div id="estacion" class="tabcontent active">
 
       <h1>""" + Estación + """</h1>
-      <p><strong>ID: </strong><a href="http://172.20.0.56/pages/dashboard/output/"""+Estación+""".html" target="_blank">""" + ID + """</a></p>
+      <p><strong>ID: </strong><a href="https://insivumeh.gob.gt/img/Estaciones_Met/dashboard/output/"""+Estación+""".html" target="_blank">""" + ID + """</a></p>
       <p><strong>Ubicación: </strong><span>Lat: """ + Latitude + """, Lon: """ + Longitude + """</span></p>
       <p><strong>"""+Municipio+""", """+Departamento+"""</span></p>
 
       </div>
 
       <div id="variables" class="tabcontent">
-       <iframe src="http://172.20.0.56/pages/dashboard/output_current/"""+Estación+""".html" frameborder="0" width="100%" height="400px"></iframe>
+       <iframe src="https://insivumeh.gob.gt/img/Estaciones_Met/dashboard/output_current/"""+Estación+""".html" frameborder="0" width="100%" height="400px"></iframe>
       </div>
 
       <div id="contact" class="tabcontent">
-       <a href="http://172.20.0.56/pages/stationsmap/""" + Estación + """.html"   target="_blank">
+       <a href="https://insivumeh.gob.gt/img/Estaciones_Met/stationsmap/""" + Estación + """.html"   target="_blank">
        <img src="https://raw.githubusercontent.com/Climatologia-INSIVUMEH/graph_generator_monthly/main/output/img_output/""" + Estación + """.png" alt="graph" width="430" height="250"> 
        </a>
       </div>
