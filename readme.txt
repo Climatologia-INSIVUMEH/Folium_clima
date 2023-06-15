@@ -13,3 +13,5 @@ Los csv contienen datos de latitud, longitud, descripción de la estación (Esta
 
 Para visualizar el mapa puede ingresar en el siguiente enlace
   https://climatologia-insivumeh.github.io/Folium_clima/
+
+

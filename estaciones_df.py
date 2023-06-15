@@ -18,12 +18,19 @@ my_map = folium.Map(location = boulder_coords, zoom_start = 8, control_scale=Tru
 #my_map = folium.Map(location = boulder_coords, zoom_start = 8, tiles="Stamen Terrain", control_scale=True)
 
 
+loc = 'INFORMACIÓN PRELIMINAR DE LAS ESTACIONES CONVECIONALES - Departamento de Investigación y Servicios Meteorológicos - INSIVUMEH'
+title_html = '''
+             <h3 align="center" style="font-size:16px"><b>{}</b></h3>
+             '''.format(loc)   
+
+
 marker_cluster = MarkerCluster(name="Estaciones Climáticas").add_to(my_map)
 marker_cluster2 = MarkerCluster(name="Estaciones Sinópticas", show=False).add_to(my_map)
 
 #### Enlaces ####
 regiones_clima='https://raw.githubusercontent.com/PeterArgueta/clima/main/rc.geojson'
 departamentos='https://raw.githubusercontent.com/PeterArgueta/clima/main/deptos_gt.geojson'
+belice='data/Belice.geojson'
 
 #### Style ####
 style_function = lambda x: {'fillColor': '#ffffff', 
@@ -70,6 +77,17 @@ folium.GeoJson(
     departamentos, name="Departamentos",
     style_function=style_function2,
     show=(True)
+).add_to(my_map)
+
+folium.GeoJson(
+    belice, name="Diferendo Territorial y Marítimo",
+    style_function=style_function2,
+    show=(True),
+    tooltip=folium.features.GeoJsonTooltip(
+        fields=['Nombre'],  # use fields from the json file
+        aliases=[''],
+        style=("background-color: white; color: #000000; font-family: arial; font-size: 12px; padding: 10px;") 
+    )
 ).add_to(my_map)
 
 ######################################
@@ -284,7 +302,7 @@ for i in range(0,len(df_sino)):
  
         
 logo = ("https://raw.githubusercontent.com/PeterArgueta/clima/main/logo.png")
-#logo = ("https://raw.githubusercontent.com/PeterArgueta/dataset/master/img/COBAN.png")
+
 
 FloatImage(logo, bottom=5, left=1, width='80px').add_to(my_map)
 
@@ -304,6 +322,8 @@ MousePosition(
 ).add_to(my_map) 
 
 LocateControl().add_to(my_map)
+#Geocoder().add_to(my_map)
+my_map.get_root().html.add_child(folium.Element(title_html))
 
 my_map.save("index.html")
 
